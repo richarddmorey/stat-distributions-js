@@ -56,6 +56,8 @@ New distributions can be defined analgously.
 
 Every distribution must have at least one parametrization. Most of the important information about the distribution is in the parametrization object. See the `distributionObjects.js` file for more details, and the `distributionList.js` file for examples.
 
+## Libraries used
+
 Uses the following libraries:
 * For plotting: [jquery](https://jquery.com/), [jquery-ui](https://jqueryui.com/), and [flot.js](http://www.flotcharts.org/)
 * For the formula display: [MathJax](https://www.mathjax.org/)
