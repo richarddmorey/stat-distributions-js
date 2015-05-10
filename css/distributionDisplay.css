@@ -1,0 +1,72 @@
+body{
+	background-color: white;
+	
+}
+
+.partooltip {
+	display:none;
+	background-color: black;
+	font-size:16px;
+	padding:5px;
+	color:#fff;	
+	opacity: .8;
+	font-family: sans-serif;
+}
+
+.interfacecontainer {
+
+	border-style: solid;
+	border-width: 1px;
+	border-color: gray;
+	padding: 10px;
+	margin: 10px;
+	width: 600px;
+	height: 320px;
+	background-color: white;
+}
+
+#parametercontainer {
+	width:250px;
+	float: left;
+}
+
+
+.paramslider {
+	width: 150px;
+	float: left;
+}
+
+.paramindicator {
+	width: 50px;
+	float: left;
+}
+
+.paramlabel {
+	width: 20px;
+	float: left;
+}
+
+.clear {
+	clear: both;
+}
+
+.paramsinglecontainer {
+	width: 250px;
+	height: 40px;
+	float: left;
+	position: relative;
+}
+
+.controlcontainer {
+	width: 260px;
+	float: left;
+}
+
+#plottypebuttonscontainer {
+	width: 200px;
+}
+
+.plotcontainer {
+	width: 310px;
+	float: left;
+}

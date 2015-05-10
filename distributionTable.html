@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Distribution display</title>
+    <!--link href="layout.css" rel="stylesheet" type="text/css"-->
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+        <link rel="stylesheet" type="text/css" href="css/libraries/milkbox/milkbox.css" />
+
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/mootools/1.4.1/mootools-yui-compressed.js" ></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+        
+        <script type="text/javascript" src="js/libraries/mootools-more-1.4.0.1.js" ></script>
+        <script type="text/javascript" src="js/libraries/milkbox.js"></script>
+        <script type="text/javascript" src="js/libraries/jstat.js"></script>      
+    	<script type="text/javascript" src="js/libraries/disableSTIX.js"></script>        
+
+        <link rel="stylesheet" type="text/css" href="css/disttable.css" />   
+        <script type="text/javascript" src="js/distributionDisplay.js"></script>
+        <script type="text/javascript" src="js/distributionObjects.js"></script>
+		<script type="text/javascript" src="js/distributionList.js"></script>
+
+ </head>
+
+<body>
+
+Continuous
+<div id="continuous_distributionsdiv"></div>
+
+Discrete
+<div id="discrete_distributionsdiv"></div>
+
+Multivariate
+<div id="multivariate_distributionsdiv"></div>
+
+Master
+<div id="master_distributionsdiv"></div>
+
+<script type="text/javascript">
+
+    window.addEvent('domready', function () {
+		
+		makeSortedTable("discrete","Table of discrete distributions.");
+		makeSortedTable("continuous");
+		makeSortedTable("multivariate");
+		makeSortedTable("master");
+        milkbox = new Milkbox({ centered:true });
+        
+    });
+
+</script>
+
+
+</body>
+
+
+</html>
