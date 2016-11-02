@@ -1079,7 +1079,7 @@ var negbinomialrp = new distributionParametrization(
 
 distributions["negativebinomial"] = new distribution(
 	"negativebinomial",
-	"Negatve binomial",
+	"Negative binomial",
 	"discrete",
 	[ negbinomialrp ],
 	null,
