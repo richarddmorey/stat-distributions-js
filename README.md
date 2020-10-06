@@ -5,7 +5,7 @@ Javascript library for the visualization of statistical distributions
 
 Allows for interactive visualizations of probability distributions. The goal of this library is to offer a simple way to define any distribution one likes, and then to immediately be able to interact with the parameters of the distribution and see how the distribution changes. 
 
-[Live demo](http://learnbayes.org/demo/stat-distributions-js/distributionTable.html)
+[Live demo](https://richarddmorey.github.io/stat-distributions-js/)
 
 [![Screen1](http://learnbayes.org/demo/stat-distributions-js/screenshots/screen-distribution_thumb.jpg)](http://learnbayes.org/demo/stat-distributions-js/screenshots/screen-distribution.png)
 
@@ -19,7 +19,7 @@ There are two HTML files:
 
 `distributionDisplay.html` can be used directly using URL parameters, e.g.:
 
-[http://learnbayes.org/demo/stat-distributions-js/distributionDisplay.html?dist=normal&ptzn=2&plotxrng=50,150&rangesLo=50,3&rangesHi=150,45&starts=100,15](http://learnbayes.org/demo/stat-distributions-js/distributionDisplay.html?dist=normal&ptzn=2&plotxrng=50,150&rangesLo=50,3&rangesHi=150,45&starts=100,15)
+[https://richarddmorey.github.io/stat-distributions-js/distributionDisplay.html?dist=normal&ptzn=2&plotxrng=50,150&rangesLo=50,3&rangesHi=150,45&starts=100,15](https://richarddmorey.github.io/stat-distributions-js/?dist=normal&ptzn=2&plotxrng=50,150&rangesLo=50,3&rangesHi=150,45&starts=100,15)
 
 The setup parameters used here are:
 * `dist`: the distribution name
