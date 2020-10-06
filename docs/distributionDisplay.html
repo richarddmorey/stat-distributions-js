@@ -1,0 +1,115 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Distribution display</title>
+    <!--link href="layout.css" rel="stylesheet" type="text/css"-->
+    <!--[if lte IE 8]><script language="javascript" type="text/javascript" src="js/excanvas.min.js"></script><![endif]-->
+        <link rel="stylesheet" type="text/css" media="screen" href="css/libraries/jquery.aristo.css" />
+        <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+        <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML" type="text/javascript"></script>
+
+        <script type="text/javascript" src="js/libraries/jquery-ui-1.8.9.min.js"></script>
+        <script type="text/javascript" src="js/libraries/jquery.tools.min.js"></script>
+        <script type="text/javascript" src="js/libraries/jquery.flot.min.js"></script>
+        <script type="text/javascript" src="js/libraries/jstat.js"></script>
+    	<script type="text/javascript" src="js/libraries/jquery.flot.crosshair.js"></script>
+    	<script type="text/javascript" src="js/libraries/disableSTIX.js"></script>        
+        
+        <link rel="stylesheet" type="text/css" href="css/distributionDisplay.css" />
+        <script type="text/javascript" src="js/distributionDisplay.js"></script>
+        <script type="text/javascript" src="js/distributionObjects.js"></script>
+		<script type="text/javascript" src="js/distributionList.js"></script>
+
+
+ </head>
+
+<body>
+
+<div class="interfacecontainer">
+	
+	<div class="plotcontainer">	
+    <div id="plot" style="width:300px;height:300px;"></div>
+	</div>
+
+	<div class="controlcontainer">
+		<div id="plottypebuttonscontainer">
+			<button id="buttonPDF" disabled="disabled" onclick="makePDF();">PDF</button>
+			<button id="buttonCDF" onclick="makeCDF();">CDF</button> 
+		</div>
+		<br class="clear"/>
+		<div id="parametercontainer">
+		</div>
+		<div class="clear">
+	</div>
+	
+	<div class="clear"></div>
+
+</div>
+
+<table id="test"></table>
+
+<script type="text/javascript">
+
+$(function () {
+
+	var i;
+	
+	function qs() {
+		var query = window.location.search.substring(1);
+		var parms = query.split('&');
+		for (var i=0; i<parms.length; i++) {
+			var pos = parms[i].indexOf('=');
+			if (pos > 0) {
+				var key = decodeURIComponent(parms[i].substring(0,pos));
+				var val = decodeURIComponent(parms[i].substring(pos+1));
+				qsParm[key] = val;
+			}
+		}
+	}
+	
+	var qsParm = new Array();
+	qsParm["dist"] = 0;
+	qsParm["ptzn"] = 0;
+	qsParm["starts"] = null;
+	qsParm["rangesLo"] = null;
+	qsParm["rangesHi"] = null;
+	qsParm["plotxrng"] = null;
+	qs();
+	
+	distName  = qsParm["dist"];
+	ptznNum = qsParm["ptzn"];
+	starts = qsParm["starts"] == null ? [] : qsParm["starts"].split(",");
+	rangesLo = qsParm["rangesLo"] == null ? [] : qsParm["rangesLo"].split(",");
+	rangesHi = qsParm["rangesHi"] == null ? [] : qsParm["rangesHi"].split(",");
+	plotxrng = qsParm["plotxrng"] == null ? [] : qsParm["plotxrng"].split(",");
+	
+	
+	if(!is_int(ptznNum) || ptznNum<0){
+		alert("Invalid parametrization: " + dist + ", " + ptznNum);
+		return;
+	}
+	
+	if(distName in distributions){
+		dist = distributions[distName];
+		dist.createInterfaceElements(ptznNum);
+		dist.plotid = "plot";
+		dist.updatePlot(ptznNum);
+
+	}else{
+		alert("Invalid distribution: "+distName);
+	}
+	
+	/*for(d in distributions){
+		$("#test").append(distributions[d].refTableRow());
+	}*/
+	
+});
+
+</script>
+
+
+</body>
+
+
+</html>
